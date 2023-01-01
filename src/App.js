@@ -1,17 +1,25 @@
+import  Input  from './components/Input/index';
+import  Button  from './components/Button/index';
 
+import {Container, Content} from './styles';
 
 const App = () => {
   return (
-    <div className="App">
+    //aqui eu estava retornando na tela uma div
+    //logo substitui a div pelo container que criei no styles.
+    <Container>
       <header className="App-header">
        
-    
-        
-        <h1>
-        Parabéns, rendeirzou!
-        </h1>
+          {/* Conteudo da minha calculadora */}
+        <Content>
+
+            <Input/>
+            
+        </Content>
+
       </header>
-    </div>
+
+    </Container>
   );
 }
 
