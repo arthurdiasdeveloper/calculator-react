@@ -9,6 +9,13 @@ export const ButtonContainer = styled.button`
     color: #FFFFFF;
     font-size: 24px;
     font-weight: 700;
+    flex: 1;
+    //quando eu passar o mouse em cima do button,
+    //a opacidade sera de 0.6
+    &:hover{
+        opacity: 0.6;
+
+    }
     
     
   
