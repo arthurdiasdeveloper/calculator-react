@@ -22,3 +22,20 @@ export const Content = styled.div`
 
 
 `
+
+//tenho que importar a Row dentro de App.js
+export const Row = styled.div`
+    display: flex;
+    flex-direction: Row;
+    justify-content: space-between;
+    align-items: center;
+
+
+`
+//tenho que importar a column dentro de App.js
+export const Column = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+`

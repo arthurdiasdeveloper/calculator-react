@@ -1,7 +1,7 @@
 import  Input  from './components/Input/index';
 import Button  from './components/Button/index'
 
-import {Container, Content} from './styles';
+import {Container, Content, Row, Column} from './styles';
 
 const App = () => {
   return (
@@ -12,9 +12,28 @@ const App = () => {
        
           {/* Conteudo da minha calculadora */}
         <Content>
-
+           
             <Input/>
-            <Button/>
+              <Row>
+                 <Button/>
+                 <Button/>
+                 <Button/>
+                 <Button/>
+              </Row>
+            
+              <Row>
+                 <Button/>
+                 <Button/>
+                 <Button/>
+                 <Button/>
+              </Row>
+
+              <Row>
+                 <Button/>
+                 <Button/>
+                 <Button/>
+                 <Button/>
+              </Row>
            
         </Content>
 
