@@ -1,5 +1,5 @@
 import  Input  from './components/Input/index';
-import  Button  from './components/Button/index';
+import Button  from './components/Button/index'
 
 import {Container, Content} from './styles';
 
@@ -14,7 +14,8 @@ const App = () => {
         <Content>
 
             <Input/>
-            
+            <Button/>
+           
         </Content>
 
       </header>
