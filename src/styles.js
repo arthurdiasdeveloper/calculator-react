@@ -16,9 +16,9 @@ export const Container = styled.div`
 //aqui vamos adicionar o conteudo da nossa calculadora
 export const Content = styled.div`
     background-color: #FFFFFF;
-    min-width: 300px ;
-    width: 50%;
-    //min-height: 350px;
+   // min-width: 300px ;
+    width: 10%;
+    min-height: 350px;
 
 
 `
