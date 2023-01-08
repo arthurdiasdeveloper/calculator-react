@@ -8,19 +8,64 @@ const App = () => {
   //vou armazenar o stado da minha aplicação
   const [currentNumber, setCurrentNumber] = useState('0');
 
+  //Segundo useSate - o usestate abaixo serà utilizado para a soma dos nùmeros
+  //da calculadora.
+  const [firstNumber, setFirstNumber] = useState('0');
+
+  //terceiro useState
+  const [operation, setOperation] = useState('');
+
+//--------------------FUNCTIONS-----------------------------------------
   const handleOnClear = () =>{
     setCurrentNumber('0')
-
+    setFirstNumber('0')
+    setOperation('')
   };
 
+  //function(adicionar numero)
   const handleAddNumber = (num) => {
     // O prev representa o valor que eu ja possuo nesse estado
     //nesse caso eu já concateno com o number.
-    setCurrentNumber(prev => `${num} ${prev === '0' ? '' : prev}`)
+    setCurrentNumber(prev => `${prev === '0' ? '' : prev}${num}`)
+  };
+
+  //Utilização do segudno useState (function somar)
+  const handleSumNumber = () =>{
+
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0')
+      setOperation('+')
+
+    }else {
+
+      console.log( Number(firstNumber), Number(currentNumber))
+      const sum = Number(firstNumber) + Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+      
+    }
+    
   };
 
 
+    //Utilização do terceiro useState (funciton igual)
+    const handleEquals = () =>{
 
+      if(firstNumber !== '0' && operation !== '' && currentNumber !== ('0')){ 
+        switch(operation){
+          case '+':
+            handleSumNumber();
+            break;
+        default: break;
+        }
+        
+      }
+
+      
+    };
+  
+//-----------------------------------------------------------------------
   return (
     //aqui eu estava retornando na tela uma div
     //logo substitui a div pelo container que criei no styles.
@@ -34,7 +79,7 @@ const App = () => {
             <Row>
                  <Button label="X" onClick={ () => handleAddNumber ('')}/>
                  <Button label="/" onClick={ () => handleAddNumber ('')}/>
-                 <Button label="C" onClick={ (handleOnClear) => handleAddNumber ('')}/>
+                 <Button label="C" onClick={ handleOnClear}/>
                  <Button label="CC" onClick={ () => handleAddNumber ('')}/>
                 
               </Row>
@@ -51,7 +96,7 @@ const App = () => {
                  <Button label="4" onClick={ () => handleAddNumber ('4')}/>
                  <Button label="5" onClick={ () => handleAddNumber ('5')}/>
                  <Button label="6" onClick={ () => handleAddNumber ('6')}/>
-                 <Button label="+" onClick={ () => handleAddNumber ('')}/>
+                 <Button label="+" onClick={handleSumNumber}/>
                 
               </Row>
 
@@ -59,7 +104,7 @@ const App = () => {
                  <Button label="1" onClick={ () => handleAddNumber ('1')}/>
                  <Button label="2" onClick={ () => handleAddNumber ('2')}/>
                  <Button label="3" onClick={ () => handleAddNumber ('3')}/>
-                 <Button label="=" onClick={ () => handleAddNumber ('')}/>
+                 <Button label="=" onClick={handleEquals}/>
               </Row>
             
 
