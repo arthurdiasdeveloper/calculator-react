@@ -20,7 +20,7 @@ export const InputContainer = styled.div`
     input{
         width: 100%;
         height: 75px;
-        background-color: #AAFFAA;
+        background-color: #000000;
         border: 0;
         display: flex;
         flex-direction: column;

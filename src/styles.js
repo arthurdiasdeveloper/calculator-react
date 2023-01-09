@@ -17,8 +17,10 @@ export const Container = styled.div`
 export const Content = styled.div`
     background-color: #FFFFFF;
    // min-width: 300px ;
-    width: 10%;
+    width: 14%;
     min-height: 350px;
+   
+    
 
 
 `

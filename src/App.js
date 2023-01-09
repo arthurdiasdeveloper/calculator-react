@@ -22,6 +22,13 @@ const App = () => {
     setOperation('')
   };
 
+  const handleOffClear = () =>{
+    handleOnClear()
+    setCurrentNumber('Pressione C para ligar a calculadora!')
+   
+  };
+
+
   //function(adicionar numero)
   const handleAddNumber = (num) => {
     // O prev representa o valor que eu ja possuo nesse estado
@@ -34,7 +41,7 @@ const App = () => {
 
     if(firstNumber === '0'){
       setFirstNumber(String(currentNumber));
-      setCurrentNumber('0')
+      setCurrentNumber('+')
       setOperation('+')
 
     }else {
@@ -49,6 +56,55 @@ const App = () => {
   };
 
 
+
+   //Utilização do segudno useState (function subtração)
+   const handleSubtractNumber = () =>{
+
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0')
+      setOperation('-')
+
+    }else {
+
+      console.log( Number(firstNumber), Number(currentNumber))
+      const sub = Number(firstNumber) - Number(currentNumber);
+      setCurrentNumber(String(sub))
+      setOperation('')
+      
+    }
+    
+  };
+
+  //function para o button dividiro.
+  const hadleDivision = () => {
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber))
+      setCurrentNumber('0')
+      setOperation('/')
+
+    } else {
+      const dvision = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(dvision))
+      setOperation('')
+    }
+  }
+
+  const multiplication = () => {
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber))
+      setCurrentNumber('0')
+      setOperation('*')
+    } else {
+      console.log(Number(firstNumber), Number(currentNumber))
+      const multiplication = Number(firstNumber) * Number(currentNumber)
+      setCurrentNumber(String(multiplication))
+      setOperation('')
+
+    }
+  }
+
+
     //Utilização do terceiro useState (funciton igual)
     const handleEquals = () =>{
 
@@ -56,6 +112,15 @@ const App = () => {
         switch(operation){
           case '+':
             handleSumNumber();
+            break;
+          case '-':
+            handleSubtractNumber();
+            break;
+          case '/':
+            hadleDivision();
+            break;
+          case '*':
+            multiplication();
             break;
         default: break;
         }
@@ -77,10 +142,10 @@ const App = () => {
            
             <Input value={currentNumber}/>
             <Row>
-                 <Button label="X" onClick={ () => handleAddNumber ('')}/>
-                 <Button label="/" onClick={ () => handleAddNumber ('')}/>
+                 <Button label="*" onClick={multiplication}/>
+                 <Button label="/" onClick={hadleDivision }/>
                  <Button label="C" onClick={ handleOnClear}/>
-                 <Button label="CC" onClick={ () => handleAddNumber ('')}/>
+                 <Button label="CC" onClick={ handleOffClear}/>
                 
               </Row>
 
@@ -88,7 +153,7 @@ const App = () => {
                  <Button label="7" onClick={ () => handleAddNumber ('7')}/>
                  <Button label="8" onClick={ () => handleAddNumber ('8')}/>
                  <Button label="9" onClick={ () => handleAddNumber ('9')}/>
-                 <Button label="-" onClick={ () => handleAddNumber ('')}/>
+                 <Button label="-" onClick={handleSubtractNumber}/>
                 
               </Row>
 
