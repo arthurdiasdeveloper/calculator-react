@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Getting Started with Create React App Calculator using the lib Styled Components
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
